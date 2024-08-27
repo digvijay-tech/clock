@@ -1,9 +1,7 @@
 package main
 
-import (
-	"fmt"
-)
+import "clock/clt"
 
 func main() {
-	fmt.Println("Clock: Simple and efficient cli tool for working with time")
+	clt.PrintCLT()
 }
