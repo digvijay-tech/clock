@@ -6,6 +6,17 @@ import (
 	"time"
 )
 
+const (
+	DAYALPHA = "Mon"
+	DAYNUM   = "2"
+	MONTH    = "Jan"
+	YEAR     = "2006"
+	DATE     = "2 Jan 2006"
+	HOUR12   = "03:04 PM"
+	HOUR24   = "15:04"
+	TIMEZONE = "MST"
+)
+
 func getSuffix(day int) string {
 	switch day {
 	case 1, 21, 31:
@@ -25,6 +36,6 @@ func PrintCLT() {
 	day := currentTime.Day()
 	suffix := getSuffix(day)
 
-	formattedTime := currentTime.Format("Mon 2") + suffix + currentTime.Format(" Jan 2006, 03:04 PM MST")
-	fmt.Println("Current Local Time:", formattedTime)
+	formattedTime := currentTime.Format(DAYALPHA+" "+DAYNUM) + suffix + currentTime.Format(" "+MONTH+" "+YEAR+" "+HOUR12+" "+TIMEZONE)
+	fmt.Println(formattedTime)
 }
